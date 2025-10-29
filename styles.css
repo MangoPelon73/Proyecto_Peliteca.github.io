@@ -1,0 +1,117 @@
+/* ----- ESTILOS GENERALES ----- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #1b0034, #240046, #3c096c);
+  background: -moz-linear-gradient(135deg, #1b0034, #240046, #3c096c);
+  background: -webkit-linear-gradient(135deg, #1b0034, #240046, #3c096c);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ----- ENCABEZADO ----- */
+header {
+  text-align: center;
+  margin-top: 30px;
+  text-shadow: 0 0 10px #a100ff;
+  -moz-text-shadow: 0 0 10px #a100ff;
+  -webkit-text-shadow: 0 0 10px #a100ff;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* ----- SECCIÓN DE PELÍCULAS ----- */
+.peliculas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+/* ----- TARJETAS ----- */
+.tarjeta {
+  background: radial-gradient(circle, #4b0082, #240046);
+  background: -moz-radial-gradient(circle, #4b0082, #240046);
+  background: -webkit-radial-gradient(circle, #4b0082, #240046);
+  width: 270px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(161, 0, 255, 0.7);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.tarjeta h2 {
+  margin: 15px 0 10px;
+}
+
+.tarjeta p {
+  color: #ddd;
+  font-size: 0.9rem;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+/* Alejandro Navarro Gonzalez */
+/* ----- BOTONES ----- */
+button {
+  background: linear-gradient(90deg, #a100ff, #6a00f4);
+  background: -moz-linear-gradient(90deg, #a100ff, #6a00f4);
+  background: -webkit-linear-gradient(90deg, #a100ff, #6a00f4);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(161, 0, 255, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 0, 255, 0.7);
+}
+
+/* ----- PIE DE PÁGINA ----- */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #bbb;
+  text-align: center;
+}
+
+/* ----- RESPONSIVO ----- */
+@media (max-width: 768px) {
+  .peliculas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 90%;
+  }
+}
