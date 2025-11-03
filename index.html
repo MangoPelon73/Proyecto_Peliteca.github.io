@@ -156,16 +156,22 @@
     <p>@Hecho por Alejandro Navarro Gonzalez y Santiago Rodriguez Segura — Proyecto de HTML y CSS</p>
   </footer>
 
-	 <script>
+	  <script>
     const inputBusqueda = document.getElementById('buscar');
     const tarjetas = document.querySelectorAll('.tarjeta');
 
     inputBusqueda.addEventListener('keyup', function() {
-      const texto = this.value.toLowerCase();
+      const texto = this.value.toLowerCase().trim();
 
       tarjetas.forEach(tarjeta => {
         const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
-        tarjeta.style.display = titulo.includes(texto) ? '' : 'none';
+        const descripcion = tarjeta.querySelector('p').textContent.toLowerCase();
+
+        if (titulo.includes(texto) || descripcion.includes(texto)) {
+          tarjeta.style.display = '';
+        } else {
+          tarjeta.style.display = 'none';
+        }
       });
     });
   </script>
@@ -173,6 +179,7 @@
 </body>
 
 </html>
+
 
 
 
