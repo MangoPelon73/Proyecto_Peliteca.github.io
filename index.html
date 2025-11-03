@@ -161,24 +161,23 @@
     const tarjetas = document.querySelectorAll('.tarjeta');
 
     inputBusqueda.addEventListener('keyup', function() {
-      const texto = this.value.toLowerCase().trim();
-
-      tarjetas.forEach(tarjeta => {
-        const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
-        const descripcion = tarjeta.querySelector('p').textContent.toLowerCase();
-
-        if (titulo.includes(texto) || descripcion.includes(texto)) {
-          tarjeta.style.display = '';
-        } else {
-          tarjeta.style.display = 'none';
-        }
-      });
-    });
+  const texto = this.value.toLowerCase().trim();
+  tarjetas.forEach(tarjeta => {
+    const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
+    const descripcion = tarjeta.querySelector('p').textContent.toLowerCase();
+    if (titulo.includes(texto) || descripcion.includes(texto)) {
+      tarjeta.style.display = '';
+    } else {
+      tarjeta.style.display = 'none';
+    }
+  });
+});
   </script>
 
 </body>
 
 </html>
+
 
 
 
