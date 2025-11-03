@@ -134,10 +134,16 @@ header p {
 
 /* ----- SECCIÓN DE PELÍCULAS ----- */
 .peliculas {
+  display: -webkit-flex;
+  display: -moz-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
   padding: 40px 20px;
 }
 /* ----- BARRA DE BUSQUEDA ----- */
@@ -164,58 +170,94 @@ header p {
 
 /* ----- TARJETAS ----- */
 .tarjeta {
-  background: radial-gradient(circle, #4b0082, #240046);
-  background: -moz-radial-gradient(circle, #4b0082, #240046);
-  background: -webkit-radial-gradient(circle, #4b0082, #240046);
-  width: 270px;
-  border-radius: 15px;
+  background: linear-gradient(145deg, #3a0072, #5b00b2);
+  background: -moz-linear-gradient(145deg, #3a0072, #5b00b2);
+  background: -webkit-linear-gradient(145deg, #3a0072, #5b00b2);
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  width: 240px;
   text-align: center;
+  color: #fff;
+  padding-bottom: 15px;
+  overflow: hidden;
+  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta:hover {
-  transform: scale(1.05);
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(161, 0, 255, 0.7);
 }
 
 .tarjeta img {
   width: 100%;
-  height: 380px;
+  height: 340px;
   object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  -webkit-border-radius: 16px 16px 0 0;
+  -moz-border-radius: 16px 16px 0 0;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .tarjeta h2 {
-  margin: 15px 0 10px;
+  font-size: 1rem;
+  margin: 12px 0 5px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  -webkit-text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  -moz-text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .tarjeta p {
-  color: #ddd;
   font-size: 0.9rem;
-  padding: 0 10px;
-  margin-bottom: 15px;
+  color: #ddd;
+  margin: 0 10px 15px;
 }
+
 /* Alejandro Navarro Gonzalez */
-/* ----- BOTONES ----- */
-button {
+/* ----- BOTONES DE LAS TARJETAS ----- */
+.tarjeta button {
   background: linear-gradient(90deg, #a100ff, #6a00f4);
   background: -moz-linear-gradient(90deg, #a100ff, #6a00f4);
   background: -webkit-linear-gradient(90deg, #a100ff, #6a00f4);
   border: none;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
   cursor: pointer;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(161, 0, 255, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 10px rgba(161, 0, 255, 0.4);
+  -webkit-transition: background 0.3s ease, transform 0.3s ease;
+  -moz-transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
+.tarjeta button:hover {
+  background: linear-gradient(90deg, #c24cff, #8b00ff);
+  background: -moz-linear-gradient(90deg, #c24cff, #8b00ff);
+  background: -webkit-linear-gradient(90deg, #c24cff, #8b00ff);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
   transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(255, 0, 255, 0.7);
+  box-shadow: 0 6px 15px rgba(255, 0, 255, 0.6);
 }
+
+
 
 /* ----- PIE DE PÁGINA ----- */
 footer {
@@ -229,6 +271,8 @@ footer {
 /* ----- RESPONSIVO ----- */
 @media (max-width: 768px) {
   .peliculas {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
     flex-direction: column;
     align-items: center;
   }
@@ -237,9 +281,3 @@ footer {
     width: 90%;
   }
 }
-
-
-
-
-
-
