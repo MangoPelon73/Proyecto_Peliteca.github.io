@@ -156,8 +156,23 @@
     <p>@Hecho por Alejandro Navarro Gonzalez y Santiago Rodriguez Segura — Proyecto de HTML y CSS</p>
   </footer>
 
+	 <script>
+    const inputBusqueda = document.getElementById('buscar');
+    const tarjetas = document.querySelectorAll('.tarjeta');
+
+    inputBusqueda.addEventListener('keyup', function() {
+      const texto = this.value.toLowerCase();
+
+      tarjetas.forEach(tarjeta => {
+        const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
+        tarjeta.style.display = titulo.includes(texto) ? '' : 'none';
+      });
+    });
+  </script>
+
 </body>
 
 </html>
+
 
 
