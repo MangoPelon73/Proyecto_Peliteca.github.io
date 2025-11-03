@@ -10,6 +10,9 @@
 	<header>
 	<h1 p align="center">PELITECA</h1>
 	<p p align="center">UN VIAJE POR LA HISTORIA DEL CINE</p>
+	<div class="busqueda-container">
+      <input type="text" id="buscar" placeholder="Buscar película...">
+    </div>
     </header>
 
     <main>
@@ -146,9 +149,28 @@
     <footer>
     <p>@Hecho por Alejandro Navarro Gonzalez y Santiago Rodriguez Segura — Proyecto de HTML y CSS</p>
   </footer>
+	  <script>
+    const inputBusqueda = document.getElementById('buscar');
+    const tarjetas = document.querySelectorAll('.tarjeta');
 
+    inputBusqueda.addEventListener('keyup', function() {
+      const texto = this.value.toLowerCase().trim();
+
+      tarjetas.forEach(tarjeta => {
+        const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
+        const descripcion = tarjeta.querySelector('p').textContent.toLowerCase();
+
+        if (titulo.includes(texto) || descripcion.includes(texto)) {
+          tarjeta.style.display = '';
+        } else {
+          tarjeta.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
 
 
 
