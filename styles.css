@@ -31,7 +31,7 @@ header p {
   font-size: 1rem;
 }
 
-/* ==== Modal emergente ==== */
+/* ==== Modal emergente centrado con animación ==== */
 .modal {
   display: none;
   position: fixed;
@@ -40,37 +40,32 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
-  -webkit-backdrop-filter: blur(3px);
-  -moz-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.75);
+  -webkit-backdrop-filter: blur(4px);
+  -moz-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   justify-content: center;
   align-items: center;
-  -webkit-transition: opacity 0.3s ease;
-  -moz-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
+  -webkit-animation: fadeIn 0.3s ease forwards;
+  -moz-animation: fadeIn 0.3s ease forwards;
+  animation: fadeIn 0.3s ease forwards;
 }
 
 .modal-contenido {
-  background: #1c1c1c;
+  background: linear-gradient(145deg, #2a006e, #4b0082);
   color: #fff;
-  padding: 25px;
-  border-radius: 15px;
+  padding: 30px;
+  border-radius: 18px;
   width: 90%;
   max-width: 500px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  -webkit-transform: scale(0.95);
-  -moz-transform: scale(0.95);
-  transform: scale(0.95);
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-}
-
-.modal-contenido:hover {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  transform: scale(1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0;
+  -webkit-animation: popUp 0.3s ease forwards;
+  -moz-animation: popUp 0.3s ease forwards;
+  animation: popUp 0.3s ease forwards;
 }
 
 .cerrar {
@@ -85,7 +80,56 @@ header p {
 }
 
 .cerrar:hover {
-  color: #ff7777;
+  color: #ff8888;
+}
+
+/* ==== Animaciones ==== */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes popUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+
+@-moz-keyframes popUp {
+  from {
+    opacity: 0;
+    -moz-transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ----- SECCIÓN DE PELÍCULAS ----- */
@@ -193,6 +237,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
