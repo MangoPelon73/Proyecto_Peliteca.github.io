@@ -39,6 +39,25 @@ header p {
   gap: 30px;
   padding: 40px 20px;
 }
+/* ----- BARRA DE BUSQUEDA ----- */
+.busqueda-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+    .busqueda-container input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .busqueda-container input:focus {
+      outline: none;
+      border-color: #ff6600;
+      box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+    }
 
 /* ----- TARJETAS ----- */
 .tarjeta {
@@ -115,3 +134,4 @@ footer {
     width: 90%;
   }
 }
+
