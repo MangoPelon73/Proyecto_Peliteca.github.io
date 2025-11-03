@@ -44,8 +44,7 @@ header p {
   -webkit-backdrop-filter: blur(4px);
   -moz-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  justify-content: center;
-  align-items: center;
+  
   -webkit-animation: fadeIn 0.3s ease forwards;
   -moz-animation: fadeIn 0.3s ease forwards;
   animation: fadeIn 0.3s ease forwards;
@@ -281,3 +280,4 @@ footer {
     width: 90%;
   }
 }
+
