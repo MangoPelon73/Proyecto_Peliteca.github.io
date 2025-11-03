@@ -17,12 +17,17 @@
 
     <main>
     <section class="peliculas">
-      <div class="tarjeta">
-  <img src="img\SZM.jpg" alt="Suzume">
-  <h2>Suzume</h2>
-  <p>Una joven llamada Suzume emprende un viaje para cerrar misteriosas puertas que provocan desastres naturales, descubriendo un vínculo entre el pasado y su propio destino.</p>
-  <button>Ver más</button>
-</div>
+      <div class="tarjeta" 
+           data-ano="2022" 
+           data-tipo="Anime / Fantasía"
+           data-duracion="2h 2min"
+           data-puntuacion="8.3/10"
+           data-sinopsis="Una joven llamada Suzume emprende un viaje para cerrar misteriosas puertas que provocan desastres naturales, descubriendo un vínculo entre el pasado y su propio destino.">
+        <img src="img/SZM.jpg" alt="Suzume">
+        <h2>Suzume</h2>
+        <p>Una joven viaja para cerrar puertas mágicas.</p>
+        <button class="ver-mas">Ver más</button>
+      </div>
 
 <div class="tarjeta">
   <img src="img\YN.jpg" alt="Your Name">
@@ -143,6 +148,19 @@
       <button onclick="location.href='pagina_3.html'">Siguiente &raquo;</button>
     </div>
   </main>
+	<!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h2 id="modal-titulo"></h2>
+      <p><strong>Año:</strong> <span id="modal-ano"></span></p>
+      <p><strong>Tipo:</strong> <span id="modal-tipo"></span></p>
+      <p><strong>Duración:</strong> <span id="modal-duracion"></span></p>
+      <p><strong>Puntuación:</strong> <span id="modal-puntuacion"></span></p>
+      <p><strong>Sinopsis:</strong></p>
+      <p id="modal-sinopsis"></p>
+    </div>
+  </div>
 
 
 
@@ -150,16 +168,15 @@
     <p>@Hecho por Alejandro Navarro Gonzalez y Santiago Rodriguez Segura — Proyecto de HTML y CSS</p>
   </footer>
 	  <script>
+    // --- BUSCADOR ---
     const inputBusqueda = document.getElementById('buscar');
     const tarjetas = document.querySelectorAll('.tarjeta');
 
     inputBusqueda.addEventListener('keyup', function() {
       const texto = this.value.toLowerCase().trim();
-
       tarjetas.forEach(tarjeta => {
         const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
         const descripcion = tarjeta.querySelector('p').textContent.toLowerCase();
-
         if (titulo.includes(texto) || descripcion.includes(texto)) {
           tarjeta.style.display = '';
         } else {
@@ -167,9 +184,38 @@
         }
       });
     });
+
+    // --- MODAL "VER MÁS" ---
+    const modal = document.getElementById('modal');
+    const cerrarModal = document.querySelector('.cerrar');
+    const modalTitulo = document.getElementById('modal-titulo');
+    const modalAno = document.getElementById('modal-ano');
+    const modalTipo = document.getElementById('modal-tipo');
+    const modalDuracion = document.getElementById('modal-duracion');
+    const modalPuntuacion = document.getElementById('modal-puntuacion');
+    const modalSinopsis = document.getElementById('modal-sinopsis');
+
+    document.querySelectorAll('.ver-mas').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const tarjeta = boton.closest('.tarjeta');
+        modalTitulo.textContent = tarjeta.querySelector('h2').textContent;
+        modalAno.textContent = tarjeta.dataset.ano;
+        modalTipo.textContent = tarjeta.dataset.tipo;
+        modalDuracion.textContent = tarjeta.dataset.duracion;
+        modalPuntuacion.textContent = tarjeta.dataset.puntuacion;
+        modalSinopsis.textContent = tarjeta.dataset.sinopsis;
+        modal.style.display = 'flex';
+      });
+    });
+
+    cerrarModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
   </script>
 </body>
 </html>
+
 
 
 
