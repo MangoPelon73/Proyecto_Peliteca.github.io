@@ -313,6 +313,58 @@ footer {
   text-align: center;
 }
 
+/* ----- REDES SOCIALES ----- */
+.redes-sociales {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(145deg, #2a006e, #4b0082);
+  color: #fff;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.redes-sociales h2 {
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #a100ff;
+  -webkit-text-shadow: 0 0 10px #a100ff;
+  -moz-text-shadow: 0 0 10px #a100ff;
+}
+
+.iconos-redes {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.iconos-redes a {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.iconos-redes img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.7));
+  -webkit-filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.7));
+  -moz-filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.7));
+}
+
+.iconos-redes a:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .iconos-redes img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
 /* ----- RESPONSIVO ----- */
 @media (max-width: 768px) {
   .peliculas {
@@ -326,6 +378,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
