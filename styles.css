@@ -313,56 +313,73 @@ footer {
   text-align: center;
 }
 
-/* ----- REDES SOCIALES ----- */
+/* ----- SECCIÓN DE REDES SOCIALES (Font Awesome) ----- */
 .redes-sociales {
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
   background: linear-gradient(145deg, #2a006e, #4b0082);
-  color: #fff;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+  background: -moz-linear-gradient(145deg, #2a006e, #4b0082);
+  background: -webkit-linear-gradient(145deg, #2a006e, #4b0082);
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .redes-sociales h2 {
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px #a100ff;
-  -webkit-text-shadow: 0 0 10px #a100ff;
-  -moz-text-shadow: 0 0 10px #a100ff;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #a100ff;
+  -webkit-text-shadow: 0 0 15px #a100ff;
+  -moz-text-shadow: 0 0 15px #a100ff;
 }
 
-.iconos-redes {
+.social-icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 25px;
   flex-wrap: wrap;
 }
 
-.iconos-redes a {
-  display: inline-block;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.iconos-redes img {
-  width: 50px;
-  height: 50px;
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, #6a00f4, #a100ff);
+  background: -moz-linear-gradient(135deg, #6a00f4, #a100ff);
+  background: -webkit-linear-gradient(135deg, #6a00f4, #a100ff);
   border-radius: 50%;
-  filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.7));
-  -webkit-filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.7));
-  -moz-filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.7));
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  box-shadow: 0 0 15px rgba(161, 0, 255, 0.6);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-.iconos-redes a:hover {
-  transform: scale(1.2);
-  filter: brightness(1.3);
+.social-icons a:hover {
+  transform: scale(1.2) rotate(5deg);
+  -webkit-transform: scale(1.2) rotate(5deg);
+  -moz-transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.9);
+  background: linear-gradient(135deg, #c24cff, #8b00ff);
+  background: -moz-linear-gradient(135deg, #c24cff, #8b00ff);
+  background: -webkit-linear-gradient(135deg, #c24cff, #8b00ff);
 }
 
 /* Responsivo */
 @media (max-width: 600px) {
-  .iconos-redes img {
-    width: 40px;
-    height: 40px;
+  .social-icons a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
   }
 }
+
 
 
 /* ----- RESPONSIVO ----- */
@@ -378,6 +395,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
