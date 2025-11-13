@@ -310,21 +310,42 @@
 
     inputBusqueda.addEventListener('keyup', function() {
       const texto = this.value.toLowerCase().trim();
-
       tarjetas.forEach(tarjeta => {
         const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
         const descripcion = tarjeta.querySelector('p').textContent.toLowerCase();
-
-        if (titulo.includes(texto) || descripcion.includes(texto)) {
-          tarjeta.style.display = '';
-        } else {
-          tarjeta.style.display = 'none';
-        }
+        tarjeta.style.display = (titulo.includes(texto) || descripcion.includes(texto)) ? '' : 'none';
       });
     });
+
+    // MODAL
+    const modal = document.getElementById('modal');
+    const modalTitulo = document.getElementById('modal-titulo');
+    const modalAno = document.getElementById('modal-ano');
+    const modalTipo = document.getElementById('modal-tipo');
+    const modalDuracion = document.getElementById('modal-duracion');
+    const modalPuntuacion = document.getElementById('modal-puntuacion');
+    const modalSinopsis = document.getElementById('modal-sinopsis');
+    const cerrar = document.querySelector('.cerrar');
+
+    document.querySelectorAll('.ver-mas').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const tarjeta = boton.closest('.tarjeta');
+        modalTitulo.textContent = tarjeta.querySelector('h2').textContent;
+        modalAno.textContent = tarjeta.dataset.ano;
+        modalTipo.textContent = tarjeta.dataset.tipo;
+        modalDuracion.textContent = tarjeta.dataset.duracion;
+        modalPuntuacion.textContent = tarjeta.dataset.puntuacion;
+        modalSinopsis.textContent = tarjeta.dataset.sinopsis;
+        modal.style.display = 'flex';
+      });
+    });
+
+    cerrar.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
   </script>
 </body>
 </html>
+
 
 
 
