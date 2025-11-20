@@ -11,6 +11,8 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+/* ----- FUENTES ----- */
 @font-face{
   font-family: "fuente 1";
   src: url("Bungee_Spice/BungeeSpice-Regular.ttf")
@@ -471,6 +473,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
