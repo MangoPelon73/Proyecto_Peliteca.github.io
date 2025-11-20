@@ -276,6 +276,8 @@
     </div>
   </div>
 
+	<div id="map" style="width: 100%; height: 400px;"></div>
+
 <!-- ----- SECCIÓN DE REDES SOCIALES ----- -->
 <section class="redes-sociales">
   <h2>Síguenos en nuestras redes</h2>
@@ -364,6 +366,31 @@
     }
   }
 </script>
+
+<script>
+  function initMap() {
+    const ubicacion = { lat: 19.4326, lng: -99.1332 };
+    const mapa = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: ubicacion
+    });
+
+    new google.maps.Marker({
+      position: ubicacion,
+      map: mapa,
+      title: "Ubicación"
+    });
+  }
+</script>
+
+<script async defer src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d978.8123477635219!2d-100.93471409400138!3d22.144905840651177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa232c80bf035%3A0xe0c00ea43a45aae1!2sCBTiS%20131!5e0!3m2!1ses-419!2smx!4v1763652387092!5m2!1ses-419!2smx"></script>
+
+<h2>Géneros más vistos</h2>
+<canvas id="graficaGeneros" width="400" height="200"></canvas>
+
+<h2>Distribución general</h2>
+<canvas id="graficaPie" width="400" height="200"></canvas>
+
 	<section id="sobre-sitio" class="explicacion">
   <h2>Sobre el Sitio Web</h2>
   <p>
@@ -393,9 +420,48 @@
     consolidando así un portal confiable y entretenido para los fanáticos del cine.
   </p>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('graficaGeneros');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Acción', 'Comedia', 'Terror', 'Romance', 'Sci-Fi', 'Drama'],
+      datasets: [{
+        label: 'Películas más vistas',
+        data: [18, 25, 12, 22, 15, 30],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+<script>
+  const ctx2 = document.getElementById('graficaPie');
+
+  new Chart(ctx2, {
+    type: 'pie',
+    data: {
+      labels: ['Acción', 'Comedia', 'Terror', 'Romance', 'Sci-Fi', 'Drama'],
+      datasets: [{
+        data: [18, 25, 12, 22, 15, 30],
+        borderWidth: 1
+      }]
+    }
+  });
+</script>
+
 </body>
 
 </html>
+
 
 
 
