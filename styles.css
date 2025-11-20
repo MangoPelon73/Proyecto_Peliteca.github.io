@@ -35,6 +35,11 @@ h2{
 p{
   font-family: 'fuente 2'
 }
+
+#graficaGeneros, #graficaPie {
+    width: 250px !important;
+    height: 150px !important;
+ }
 /* ----- ENCABEZADO ----- */
 header {
   text-align: center;
@@ -473,6 +478,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
