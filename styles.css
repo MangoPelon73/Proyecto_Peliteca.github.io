@@ -24,6 +24,15 @@ h2{
   font-family: 'fuente 1';
 }
 
+@font-face{
+  font-family: "fuente 2";
+  src: url("Orbitron/Orbitron-VariableFont_wght.ttf")
+          format("truetype");
+}
+
+p{
+  font-family: 'fuente 2'
+}
 /* ----- ENCABEZADO ----- */
 header {
   text-align: center;
@@ -462,6 +471,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
