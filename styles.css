@@ -37,8 +37,8 @@ p{
 }
 
 #graficaGeneros, #graficaPie {
-    width: 250px !important;
-    height: 150px !important;
+    width: 450px !important;
+    height: 350px !important;
  }
 /* ----- ENCABEZADO ----- */
 header {
@@ -478,6 +478,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
