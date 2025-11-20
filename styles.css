@@ -19,7 +19,9 @@ body {
 
 h1{
   font-family: 'fuente 1';
-  
+}
+h2{
+  font-family: 'fuente 1';
 }
 
 /* ----- ENCABEZADO ----- */
@@ -460,6 +462,7 @@ footer {
     width: 90%;
   }
 }
+
 
 
 
